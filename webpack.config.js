@@ -1,8 +1,9 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const CompressionPlugin = require('compression-webpack-plugin');
-const zopfli = require('@gfx/zopfli');
+const imageminPngquant = require("imagemin-pngquant");
+const imageminSvgo = require("imagemin-svgo");
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 const env = process.env.NODE_ENV || 'development';
 // set to 'production' or 'development' in your env
@@ -61,19 +62,32 @@ module.exports = {
               name: '[name].[ext]',
             },
           },
+          {
+            loader: 'img-loader',
+            options: {
+              plugins: [
+                imageminMozjpeg({
+                  progressive: true,
+                  arithmetic: false
+                }),
+                imageminPngquant({
+                  floyd: 0.5,
+                  speed: 2
+                }),
+                imageminSvgo({
+                  plugins: [
+                      { removeTitle: true },
+                      { convertPathData: false }
+                  ]
+              })
+              ]
+            }
+          }
         ],
       },
     ],
   },
   plugins: [
-    new CompressionPlugin({
-      compressionOptions: {
-        numiterations: 15,
-      },
-      algorithm(input, compressionOptions, callback){
-        return zopfli.gzip(input, compressionOptions, callback);
-      }
-    }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
