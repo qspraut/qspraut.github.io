@@ -1,6 +1,6 @@
-# Quinn Spraut - CS52 SA3 20X
+# Quinn Spraut - CS52 SA5 20X
 
-Solution to Short Assignment 3
+Solution to Short Assignment 5
 
 [React Routing](http://quinn-cs52-reactrouting.surge.sh/)
 
