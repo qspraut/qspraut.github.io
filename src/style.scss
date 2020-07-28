@@ -5,10 +5,6 @@ body, html{
     font-size: 32px;
     color: white;
 }
-.logo{
-    background-image: url('img/pineapple.png');
-    width: 100px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
+.active{
+    color: pink;
 }

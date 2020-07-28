@@ -1,8 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const imageminPngquant = require("imagemin-pngquant");
-const imageminSvgo = require("imagemin-svgo");
+const imageminPngquant = require('imagemin-pngquant');
+const imageminSvgo = require('imagemin-svgo');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
 const env = process.env.NODE_ENV || 'development';
@@ -12,10 +12,12 @@ const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { 
 
 module.exports = {
   mode: env,
+  output: { publicPath: '/' },
   entry: ['./src'], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -68,21 +70,21 @@ module.exports = {
               plugins: [
                 imageminMozjpeg({
                   progressive: true,
-                  arithmetic: false
+                  arithmetic: false,
                 }),
                 imageminPngquant({
                   floyd: 0.5,
-                  speed: 2
+                  speed: 2,
                 }),
                 imageminSvgo({
                   plugins: [
-                      { removeTitle: true },
-                      { convertPathData: false }
-                  ]
-              })
-              ]
-            }
-          }
+                    { removeTitle: true },
+                    { convertPathData: false },
+                  ],
+                }),
+              ],
+            },
+          },
         ],
       },
     ],
@@ -92,6 +94,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './200.html',
     }),
   ],
 };
