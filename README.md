@@ -1,8 +1,6 @@
-# Quinn Spraut - CS52 SA5 20X
+# Quinn Spraut - CS52 SA6 20X
 
-Solution to Short Assignment 5
-
-[React Routing](http://quinn-cs52-reactrouting.surge.sh/)
+Solution to Short Assignment 6
 
 ## What Worked Well
 
@@ -14,7 +12,7 @@ N/A
 
 ## Extra Credit
 
-I styled the nav bar and added a few more pages without following step-by-step instructions in order to reinforce the concepts.
+N/A
 
 ## Screenshots
 
