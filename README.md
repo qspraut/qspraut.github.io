@@ -1,12 +1,12 @@
-# Quinn Spraut - CS52 SA3 20X
+# Quinn Spraut - CS52 SA5 20X
 
-Solution to Short Assignment 3
+Solution to Short Assignment 5
 
-[My Webpage](http://quinn-cs52-starter.surge.sh/)
+[React Routing](http://quinn-cs52-reactrouting.surge.sh/)
 
 ## What Worked Well
 
-Everything seemed to go well, although I am still not totally sure that I understand exactly what I did.
+Everything seemed to go well!
 
 ## What Didn't
 
@@ -14,7 +14,7 @@ N/A
 
 ## Extra Credit
 
-I added in a compressor/optimizer plugin.
+I styled the nav bar and added a few more pages without following step-by-step instructions in order to reinforce the concepts.
 
 ## Screenshots
 
