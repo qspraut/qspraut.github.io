@@ -1,5 +1,21 @@
-# quinnspraut.me
+# Quinn Spraut - CS52 SA6 20X
 
-## Quinn Spraut, CS52 Summer 2020
+Solution to Short Assignment 6
 
-This repository holds my SA1 solution.
+[My Webpage](http://quinn-cs52-sa6.surge.sh/)
+
+## What Worked Well
+
+Everything seemed to go well!
+
+## What Didn't
+
+N/A
+
+## Extra Credit
+
+N/A
+
+## Screenshots
+
+N/A
