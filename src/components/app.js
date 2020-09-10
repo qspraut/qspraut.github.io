@@ -3,59 +3,43 @@ import '../style.scss';
 import {
   BrowserRouter as Router, Route, NavLink, Switch,
 } from 'react-router-dom';
-import Counter from './counter';
-import Controls from './controls';
+import Nav from './nav';
+import Home from './home';
+import About from './about';
+import Contact from './contact';
+import Projects from './projects';
+import TouchTheFire from './touchthefire';
+import QBlog from './qblog';
+import CollabNotes from './collabnotes';
+import Sudoku from './sudoku';
+import VegetableQuiz from './vegetablequiz';
+import MorseCode from './morsecode';
 
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
-const Welcome = (props) => {
+const FallBack = (props) => {
   return (
-    <div>
-      Welcome
-      <Counter />
-      <Controls />
+    <div id="url-not-found" className="default-bg">
+      <div>Sorry, that page could not be found.</div>
+      <div><NavLink to="/"><button type="button" className="button-var-1">Home</button></NavLink></div>
     </div>
   );
 };
-const Projects = (props) => {
-  return <div> If I had projects, this is where I would put them...</div>;
-};
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
-const ColorTest = (props) => {
-  return <div> You clicked on color: {props.match.params.color} </div>;
-};
-const FallBack = (props) => {
-  return <div>URL Not Found</div>;
-};
-const Nav = (props) => {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/projects">Projects</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-        <li><NavLink to="/color/purple">Purple</NavLink></li>
-        <li><NavLink to="/color/green">Green</NavLink></li>
-      </ul>
-    </nav>
-  );
-};
+
 const App = (props) => {
   return (
     <Router>
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Welcome} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route exact path="/projects" component={Projects} />
-          <Route exact path="/test/:id" component={Test} />
-          <Route exact path="/color/:color" component={ColorTest} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/touchthefire" component={TouchTheFire} />
+          <Route path="/qblog" component={QBlog} />
+          <Route path="/collabnotes" component={CollabNotes} />
+          <Route path="/sudoku" component={Sudoku} />
+          <Route path="/vegetablequiz" component={VegetableQuiz} />
+          <Route path="/morsecode" component={MorseCode} />
           <Route component={FallBack} />
         </Switch>
       </div>
